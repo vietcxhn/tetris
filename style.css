@@ -1,0 +1,38 @@
+.grid {
+	width: 200px;
+	height: 420px;
+	display: flex;
+	flex-wrap: wrap;
+	border-style: solid;
+}
+
+.grid div {
+	width: 20px;
+	height: 20px;
+}
+
+.nextblocbox {
+	width: 120px;
+	height: 120px;
+	display: flex;
+	flex-wrap: wrap;
+	border-style: solid;
+}
+
+.nextblocbox div {
+	width: 20px;
+	height: 20px;
+}
+
+.bloc{
+  background-color: yellow
+}
+
+.settled{
+  background-color: purple
+}
+
+.floor{
+	background-color: gray
+
+}

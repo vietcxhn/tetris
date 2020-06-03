@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
         line++
         eachrow.forEach(index => playbox[index].classList.remove('settled'))
 
-        for (let j = 0; j < i; j++) {
+        for (let j = i -1; j > 0; j--) {
           if(playbox[j].classList.contains('settled')){
             playbox[j].classList.remove('settled')
             playbox[j + 10].classList.add('settled')

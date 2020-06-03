@@ -4,6 +4,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	border-style: solid;
+	grid-area: "playbox";
 }
 
 .grid div {
@@ -17,6 +18,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	border-style: solid;
+	grid-area: "nextblock";
 }
 
 .nextblocbox div {
@@ -35,4 +37,10 @@
 .floor{
 	background-color: gray
 
+}
+
+.container{
+	display: grid;
+	grid-gap: 10px;
+	grid-template-areas:"playbox nextblock";
 }

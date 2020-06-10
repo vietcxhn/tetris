@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
     [1, 10, 11, 12],
     [1, 10, 11, 21],
     [10, 11, 12, 21],
-    [0, 10, 11, 20]
+    [1, 11, 12, 21]
   ]
   const longbloc = [
-    [0, 10, 20, 30],
+    [1, 11, 21, 31],
     [20, 21, 22, 23],
-    [0, 10, 20, 30],
+    [1, 11, 21, 31],
     [20, 21, 22, 23]
   ]  
   const zbloc = [
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
       settleblock()
       scoring()
       newblock()
-      level_speed_scoremltple()
+      set_level_speed_scoremltple()
       displaynextblock()
       endgame()
     }
@@ -115,9 +115,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function rotate() {
     undraw()
+    const leftside = currentbloc.some(index => (currentpos + index) % 10 < 5)
     currentrot++
     if (currentrot === currentbloc.length) {
       currentrot = 0
+    }
+    currentbloc = allbloc[random][currentrot]
+
+    let poschange = 0
+    
+    if(leftside){
+      while(currentbloc.some(index => (currentpos + index) % 10 >= 8)){
+        currentpos++
+        poschange++
+      }
+    }
+    else{
+      while(currentbloc.some(index => (currentpos + index) % 10 <= 1)){
+        currentpos--
+        poschange--
+      }
+    }
+    
+    currentbloc = allbloc[random][currentrot]
+
+    if (currentbloc.some(index => playbox[currentpos + index].classList.contains('settled'))) {
+      currentpos-=poschange
+      currentrot--
+      if(currentrot < 0){
+        currentrot = 3
+      }
     }
     currentbloc = allbloc[random][currentrot]
     draw()
@@ -160,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     currentpos = defaultpos
   }
 
-  function level_speed_scoremltple(){
+  function set_level_speed_scoremltple(){
     blockcount++
     if(blockcount === 10){
       blockcount=1

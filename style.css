@@ -1,0 +1,49 @@
+.grid {
+	width: 250px;
+	height: 525px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.grid div {
+	width: 25px;
+	height: 25px;
+}
+
+.nextblocbox {
+	width: 150px;
+	height: 125px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.nextblocbox div {
+	width: 25px;
+	height: 25px;
+}
+
+.bloc {
+  	background-color: yellow;
+}
+
+.settled {
+  background-color: purple;
+}
+
+.floor {
+	background-color: gray;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+.ui {
+	text-align: center;
+	padding: 50px;
+}
+
+.ui div{
+	font-size: 20px
+}
